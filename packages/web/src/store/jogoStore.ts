@@ -58,13 +58,13 @@ export const useJogoStore = create<JogoState>((set, get) => ({
   resultadoPendente: null,
   historicoRodadas: [],
   modo: 'completo',
-  baralhoId: 'original',
+  baralhoId: 'vol1',
 
   iniciarPartida: (nomes, modo) => {
     const modoEscolhido = modo ?? get().modo
-    // Resolve o baralho do registry (por ora sempre 'original') e injeta as
+    // Resolve o baralho do registry (por ora sempre 'vol1') e injeta as
     // especiais GLOBAIS em toda partida. A engine (criarPartida) segue agnóstica.
-    const baralho = baralhos[get().baralhoId] ?? baralhos.original
+    const baralho = baralhos[get().baralhoId] ?? baralhos.vol1
     const cartas = [...baralho.cartas, ...especiaisGlobais]
     const partida = criarPartida(nomes, cartas, CARTAS_POR_MODO[modoEscolhido])
     set({ partida, resultadoPendente: null, historicoRodadas: [], modo: modoEscolhido, baralhoId: baralho.id })
