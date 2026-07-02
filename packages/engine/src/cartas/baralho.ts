@@ -187,14 +187,14 @@ export const especiaisGlobais: Carta[] = [
 
 // O baralho original como entidade. id/nome PROVISÓRIOS (confirmar no smoke).
 export const baralhoOriginal: Baralho = {
-  id: 'original',
-  nome: 'Baralho Original',
+  id: 'vol1',
+  nome: 'Hemp Trumpho Vol.1',
   cartas: geneticasOriginal,
 };
 
 // Registry de baralhos disponíveis (por ora só o original).
 export const baralhos: Record<string, Baralho> = {
-  original: baralhoOriginal,
+  vol1: baralhoOriginal,
 };
 
 // COMPAT: baralhoCompleto = genéticas + especiais (idêntico ao de antes), para
